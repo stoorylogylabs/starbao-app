@@ -1,0 +1,58 @@
+/* Star Bao — 共用設計 tokens */
+:root{
+  --ivory:#FBF7F0; --cream:#F5ECDD; --sand:#EADCC6; --paper:#FFFDF9;
+  --gold:#B8893E; --gold-2:#D6B271; --gold-3:#F1E2C2; --gold-deep:#8A611F;
+  --brown:#3A2819; --brown-2:#5A4331; --ink:#2A1E15; --muted:#7D6C5B; --muted-2:#A39382;
+  --green:#6E8D5C; --green-2:#8FAE7B; --green-soft:#E9F0E1;
+  --red:#B5473A; --red-soft:#FBE9E5; --amber:#C98A1B; --amber-soft:#FBF1DC; --blue:#4D6C8C;
+  --line:rgba(138,97,31,.16); --line-2:rgba(58,40,25,.10);
+  --shadow-sm:0 1px 2px rgba(58,40,25,.06),0 2px 8px rgba(58,40,25,.05);
+  --shadow:0 10px 30px -12px rgba(58,40,25,.22),0 2px 8px rgba(58,40,25,.05);
+  --shadow-lg:0 30px 60px -25px rgba(58,40,25,.35);
+  --radius:18px; --radius-sm:12px;
+  --serif:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,-apple-system,sans-serif;
+  --gold-grad:linear-gradient(135deg,#E9CF98 0%,#C79A4E 45%,#9C7130 100%);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+.ico{width:1.15em;height:1.15em;flex:none;vertical-align:-.18em}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;padding:.72em 1.25em;border-radius:999px;border:1px solid transparent;font-weight:600;font-size:.95rem;text-decoration:none;cursor:pointer;transition:transform .15s ease,box-shadow .2s ease,background .2s ease,color .2s;white-space:nowrap;line-height:1.2}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:none}
+.btn-gold{background:var(--gold-grad);color:#fff;box-shadow:0 8px 20px -8px rgba(156,113,48,.7);text-shadow:0 1px 0 rgba(0,0,0,.08)}
+.btn-gold:hover{box-shadow:0 12px 26px -8px rgba(156,113,48,.8)}
+.btn-dark{background:var(--brown);color:#F6E9D2}
+.btn-dark:hover{background:#2c1e12}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--brown)}
+.btn-ghost:hover{background:#fff;border-color:var(--gold-2)}
+.btn-wa{background:#1FA855;color:#fff;box-shadow:0 8px 20px -10px rgba(31,168,85,.8)}
+.btn-wa:hover{background:#178f47}
+.btn-sm{padding:.45em .9em;font-size:.85rem}
+.btn-lg{padding:.95em 1.6em;font-size:1.02rem}
+.btn[disabled]{opacity:.5;pointer-events:none}
+
+/* floating WhatsApp */
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:90;display:flex;align-items:center;gap:.55rem;background:#1FA855;color:#fff;text-decoration:none;border-radius:999px;padding:.7rem 1.05rem .7rem .8rem;box-shadow:0 14px 30px -10px rgba(16,110,52,.65);font-weight:600;font-size:.92rem;transition:transform .2s}
+.wa-float:hover{transform:translateY(-2px) scale(1.02)}
+.wa-float .ico{width:26px;height:26px}
+.wa-float::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 0 rgba(31,168,85,.55);animation:waPulse 2.6s infinite}
+@keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(31,168,85,.45)}70%{box-shadow:0 0 0 16px rgba(31,168,85,0)}100%{box-shadow:0 0 0 0 rgba(31,168,85,0)}}
+@media (max-width:560px){.wa-float span{display:none}.wa-float{padding:.8rem}}
+@media print{.wa-float{display:none!important}}
+
+.tag{display:inline-flex;align-items:center;gap:.3em;padding:.2em .65em;border-radius:999px;font-size:.75rem;font-weight:600;background:var(--gold-3);color:var(--gold-deep);white-space:nowrap}
+.tag.green{background:var(--green-soft);color:#4C6B3C}
+.tag.red{background:var(--red-soft);color:var(--red)}
+.tag.gray{background:#EFEAE3;color:var(--muted)}
+.tag.amber{background:var(--amber-soft);color:#8E5F0C}
+.tag.blue{background:#E6EDF4;color:var(--blue)}
+.tag.gold{background:var(--gold-3,#F6EBD3);color:var(--gold-deep,#8A6420)}
